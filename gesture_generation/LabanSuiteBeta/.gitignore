@@ -1,0 +1,279 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+__pycache__/
+.vs/
+*.pyc
+/GestureAuthoringTools/LabanEditor/vs2019/
+/GestureAuthoringTools/LabanEditor/vs2019/Labanotation.sln
+/GestureAuthoringTools/LabanEditor/vs2019/Labanotation.pyproj
+/GestureAuthoringTools/LabanEditor/vs2019/.vs/Labanotation/v16/.suo
+/GestureAuthoringTools/LabanEditor/vs2019/.vs/Labanotation/v16
+/GestureAuthoringTools/LabanEditor/vs2019
+/GestureAuthoringTools/LabanEditor/src/settings.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/tool/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/tool/wavfilter.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/tool/kp_extractor.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/tool/cluster.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/tool/accessory.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/labanVisualization.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/labanProcessor.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/labanotation.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/algtotal.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/algparallel.pyc
+/GestureAuthoringTools/LabanEditor/src/labanotation/algnaive.pyc
+/GestureAuthoringTools/LabanEditor/src/kinect.pyc
+/GestureAuthoringTools/LabanEditor/src/guiMenu/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/guiMenu/guiMenu.pyc
+/GestureAuthoringTools/LabanEditor/src/graphSkeleton/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/graphSkeleton/graphSkeleton.pyc
+/GestureAuthoringTools/LabanEditor/src/graphLaban/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/graphLaban/scrollbar.pyc
+/GestureAuthoringTools/LabanEditor/src/graphLaban/graphLaban.pyc
+/GestureAuthoringTools/LabanEditor/src/graphFilter/__init__.pyc
+/GestureAuthoringTools/LabanEditor/src/graphFilter/graphFilter.pyc
+/GestureAuthoringTools/lab2png/labanotation/test.json
+/GestureAuthoringTools/lab2png/labanotation/README.md
+/GestureAuthoringTools/lab2png/labanotation/Ges06_chickenwing.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges06_chickenwing.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges06_chickenwing.naive.json
+/GestureAuthoringTools/lab2png/labanotation/Ges05_demopoint.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges05_demopoint.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges05_demopoint.naive.json
+/GestureAuthoringTools/lab2png/labanotation/Ges04_comehere.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges04_comehere.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges04_comehere.naive.json
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.total.png
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.parallel.png
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.naive.png
+/GestureAuthoringTools/lab2png/labanotation/Ges03_drawlines.naive.json
+/GestureAuthoringTools/lab2png/labanotation/Ges02_balancinghands.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges02_balancinghands.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges02_balancinghands.naive.json
+/GestureAuthoringTools/lab2png/labanotation/Ges01_wavehand.total.json
+/GestureAuthoringTools/lab2png/labanotation/Ges01_wavehand.parallel.json
+/GestureAuthoringTools/lab2png/labanotation/Ges01_wavehand.naive.json
+/GestureAuthoringTools/lab2png/.vs/lab2jpg/v16/.suo
+/GestureAuthoringTools/txt2json/.vs/lab2jpg/v16/.suo
+/GestureAuthoringTools/txt2json/.vs/lab2png/v16/.suo
+/GestureAuthoringTools/txt2json/.vs/txt2json/v16/.suo
+/GestureAuthoringTools/txt2json/labanotation/test.png
+/GestureAuthoringTools/txt2json/labanotation/test.json
+/GestureAuthoringTools/txt2json/labanotation/README.md
+/GestureAuthoringTools/txt2json/labanotation/Ges06_chickenwing.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges06_chickenwing.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges06_chickenwing.naive.json
+/GestureAuthoringTools/txt2json/labanotation/Ges05_demopoint.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges05_demopoint.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges05_demopoint.naive.json
+/GestureAuthoringTools/txt2json/labanotation/Ges04_comehere.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges04_comehere.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges04_comehere.naive.json
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.total.png
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.parallel.png
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.naive.png
+/GestureAuthoringTools/txt2json/labanotation/Ges03_drawlines.naive.json
+/GestureAuthoringTools/txt2json/labanotation/Ges02_balancinghands.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges02_balancinghands.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges02_balancinghands.naive.json
+/GestureAuthoringTools/txt2json/labanotation/Ges01_wavehand.total.json
+/GestureAuthoringTools/txt2json/labanotation/Ges01_wavehand.parallel.json
+/GestureAuthoringTools/txt2json/labanotation/Ges01_wavehand.naive.json
+/GestureAuthoringTools/txt2json/labanotation2/youandme4.txt
+/GestureAuthoringTools/txt2json/labanotation2/youandme4.json
+/GestureAuthoringTools/txt2json/labanotation2/yawn.txt
+/GestureAuthoringTools/txt2json/labanotation2/yawn.json
+/GestureAuthoringTools/txt2json/labanotation2/weather.txt
+/GestureAuthoringTools/txt2json/labanotation2/weather.json
+/GestureAuthoringTools/txt2json/labanotation2/wave happily.txt
+/GestureAuthoringTools/txt2json/labanotation2/wave happily.json
+/GestureAuthoringTools/txt2json/labanotation2/tired.txt
+/GestureAuthoringTools/txt2json/labanotation2/tired.json
+/GestureAuthoringTools/txt2json/labanotation2/think l low s.txt
+/GestureAuthoringTools/txt2json/labanotation2/think l low s.json
+/GestureAuthoringTools/txt2json/labanotation2/think l low l.txt
+/GestureAuthoringTools/txt2json/labanotation2/think l low l.json
+/GestureAuthoringTools/txt2json/labanotation2/think l high s.txt
+/GestureAuthoringTools/txt2json/labanotation2/think l high s.json
+/GestureAuthoringTools/txt2json/labanotation2/think l high l.txt
+/GestureAuthoringTools/txt2json/labanotation2/think l high l.json
+/GestureAuthoringTools/txt2json/labanotation2/think d low s.txt
+/GestureAuthoringTools/txt2json/labanotation2/think d low s.json
+/GestureAuthoringTools/txt2json/labanotation2/think d low l.txt
+/GestureAuthoringTools/txt2json/labanotation2/think d low l.json
+/GestureAuthoringTools/txt2json/labanotation2/think d high s.txt
+/GestureAuthoringTools/txt2json/labanotation2/think d high s.json
+/GestureAuthoringTools/txt2json/labanotation2/think d high l.txt
+/GestureAuthoringTools/txt2json/labanotation2/think d high l.json
+/GestureAuthoringTools/txt2json/labanotation2/theme still end.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme still end.json
+/GestureAuthoringTools/txt2json/labanotation2/theme still continue.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme still continue.json
+/GestureAuthoringTools/txt2json/labanotation2/theme rotate end.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme rotate end.json
+/GestureAuthoringTools/txt2json/labanotation2/theme rotate continue.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme rotate continue.json
+/GestureAuthoringTools/txt2json/labanotation2/theme head lean end.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme head lean end.json
+/GestureAuthoringTools/txt2json/labanotation2/theme head lean continue.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme head lean continue.json
+/GestureAuthoringTools/txt2json/labanotation2/theme head down end.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme head down end.json
+/GestureAuthoringTools/txt2json/labanotation2/theme head down continue.txt
+/GestureAuthoringTools/txt2json/labanotation2/theme head down continue.json
+/GestureAuthoringTools/txt2json/labanotation2/thanks.txt
+/GestureAuthoringTools/txt2json/labanotation2/thanks.json
+/GestureAuthoringTools/txt2json/labanotation2/test.txt
+/GestureAuthoringTools/txt2json/labanotation2/test.json
+/GestureAuthoringTools/txt2json/labanotation2/surprised.txt
+/GestureAuthoringTools/txt2json/labanotation2/surprised.json
+/GestureAuthoringTools/txt2json/labanotation2/sorry3.txt
+/GestureAuthoringTools/txt2json/labanotation2/sorry3.json
+/GestureAuthoringTools/txt2json/labanotation2/sorry2.txt
+/GestureAuthoringTools/txt2json/labanotation2/sorry2.json
+/GestureAuthoringTools/txt2json/labanotation2/sorry.txt
+/GestureAuthoringTools/txt2json/labanotation2/sorry.json
+/GestureAuthoringTools/txt2json/labanotation2/small.txt
+/GestureAuthoringTools/txt2json/labanotation2/small.json
+/GestureAuthoringTools/txt2json/labanotation2/sleepy4.txt
+/GestureAuthoringTools/txt2json/labanotation2/sleepy4.json
+/GestureAuthoringTools/txt2json/labanotation2/sleepy.txt
+/GestureAuthoringTools/txt2json/labanotation2/sleepy.json
+/GestureAuthoringTools/txt2json/labanotation2/shake head.txt
+/GestureAuthoringTools/txt2json/labanotation2/shake head.json
+/GestureAuthoringTools/txt2json/labanotation2/say.txt
+/GestureAuthoringTools/txt2json/labanotation2/say.json
+/GestureAuthoringTools/txt2json/labanotation2/robot d.txt
+/GestureAuthoringTools/txt2json/labanotation2/robot d.json
+/GestureAuthoringTools/txt2json/labanotation2/robot d move.txt
+/GestureAuthoringTools/txt2json/labanotation2/robot d move.json
+/GestureAuthoringTools/txt2json/labanotation2/relax hand.txt
+/GestureAuthoringTools/txt2json/labanotation2/relax hand.json
+/GestureAuthoringTools/txt2json/labanotation2/quit.txt
+/GestureAuthoringTools/txt2json/labanotation2/quit.json
+/GestureAuthoringTools/txt2json/labanotation2/question.txt
+/GestureAuthoringTools/txt2json/labanotation2/question.json
+/GestureAuthoringTools/txt2json/labanotation2/please4.txt
+/GestureAuthoringTools/txt2json/labanotation2/please4.json
+/GestureAuthoringTools/txt2json/labanotation2/panic.txt
+/GestureAuthoringTools/txt2json/labanotation2/panic.json
+/GestureAuthoringTools/txt2json/labanotation2/open two arms.txt
+/GestureAuthoringTools/txt2json/labanotation2/open two arms.json
+/GestureAuthoringTools/txt2json/labanotation2/ok4.txt
+/GestureAuthoringTools/txt2json/labanotation2/ok4.json
+/GestureAuthoringTools/txt2json/labanotation2/nod.txt
+/GestureAuthoringTools/txt2json/labanotation2/nod.json
+/GestureAuthoringTools/txt2json/labanotation2/nice.txt
+/GestureAuthoringTools/txt2json/labanotation2/nice.json
+/GestureAuthoringTools/txt2json/labanotation2/many.txt
+/GestureAuthoringTools/txt2json/labanotation2/many.json
+/GestureAuthoringTools/txt2json/labanotation2/look at.txt
+/GestureAuthoringTools/txt2json/labanotation2/look at.json
+/GestureAuthoringTools/txt2json/labanotation2/lets go4.txt
+/GestureAuthoringTools/txt2json/labanotation2/lets go4.json
+/GestureAuthoringTools/txt2json/labanotation2/laugh head.txt
+/GestureAuthoringTools/txt2json/labanotation2/laugh head.json
+/GestureAuthoringTools/txt2json/labanotation2/interesting.txt
+/GestureAuthoringTools/txt2json/labanotation2/interesting.json
+/GestureAuthoringTools/txt2json/labanotation2/initialize.txt
+/GestureAuthoringTools/txt2json/labanotation2/initialize.json
+/GestureAuthoringTools/txt2json/labanotation2/i4.txt
+/GestureAuthoringTools/txt2json/labanotation2/i4.json
+/GestureAuthoringTools/txt2json/labanotation2/hungry.txt
+/GestureAuthoringTools/txt2json/labanotation2/hungry.json
+/GestureAuthoringTools/txt2json/labanotation2/howareyou4.txt
+/GestureAuthoringTools/txt2json/labanotation2/howareyou4.json
+/GestureAuthoringTools/txt2json/labanotation2/help4.txt
+/GestureAuthoringTools/txt2json/labanotation2/help4.json
+/GestureAuthoringTools/txt2json/labanotation2/hello4.txt
+/GestureAuthoringTools/txt2json/labanotation2/hello4.json
+/GestureAuthoringTools/txt2json/labanotation2/hello.txt
+/GestureAuthoringTools/txt2json/labanotation2/hello.json
+/GestureAuthoringTools/txt2json/labanotation2/happy4.txt
+/GestureAuthoringTools/txt2json/labanotation2/happy4.json
+/GestureAuthoringTools/txt2json/labanotation2/goodbye.txt
+/GestureAuthoringTools/txt2json/labanotation2/goodbye.json
+/GestureAuthoringTools/txt2json/labanotation2/good.txt
+/GestureAuthoringTools/txt2json/labanotation2/good.json
+/GestureAuthoringTools/txt2json/labanotation2/go.txt
+/GestureAuthoringTools/txt2json/labanotation2/go.json
+/GestureAuthoringTools/txt2json/labanotation2/dummy.txt
+/GestureAuthoringTools/txt2json/labanotation2/dummy.json
+/GestureAuthoringTools/txt2json/labanotation2/drink4.txt
+/GestureAuthoringTools/txt2json/labanotation2/drink4.json
+/GestureAuthoringTools/txt2json/labanotation2/dont like4.txt
+/GestureAuthoringTools/txt2json/labanotation2/dont like4.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic you rotate.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic you rotate.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic you r.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic you r.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic you l.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic you l.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic you d.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic you d.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic this.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic this.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic there rotate.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic there rotate.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic there m.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic there m.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic there h.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic there h.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic that rotate.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic that rotate.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic that m.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic that m.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic that h.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic that h.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic me rotate l.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic me rotate l.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic me l.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic me l.json
+/GestureAuthoringTools/txt2json/labanotation2/deictic here.txt
+/GestureAuthoringTools/txt2json/labanotation2/deictic here.json
+/GestureAuthoringTools/txt2json/labanotation2/dance4.txt
+/GestureAuthoringTools/txt2json/labanotation2/dance4.json
+/GestureAuthoringTools/txt2json/labanotation2/contrast.txt
+/GestureAuthoringTools/txt2json/labanotation2/contrast.json
+/GestureAuthoringTools/txt2json/labanotation2/confuse r.txt
+/GestureAuthoringTools/txt2json/labanotation2/confuse r.json
+/GestureAuthoringTools/txt2json/labanotation2/come2.txt
+/GestureAuthoringTools/txt2json/labanotation2/come2.json
+/GestureAuthoringTools/txt2json/labanotation2/come.txt
+/GestureAuthoringTools/txt2json/labanotation2/come.json
+/GestureAuthoringTools/txt2json/labanotation2/catch.txt
+/GestureAuthoringTools/txt2json/labanotation2/catch.json
+/GestureAuthoringTools/txt2json/labanotation2/big2.txt
+/GestureAuthoringTools/txt2json/labanotation2/big2.json
+/GestureAuthoringTools/txt2json/labanotation2/big.txt
+/GestureAuthoringTools/txt2json/labanotation2/big.json
+/GestureAuthoringTools/txt2json/labanotation2/beat3.txt
+/GestureAuthoringTools/txt2json/labanotation2/beat3.json
+/GestureAuthoringTools/txt2json/labanotation2/beat2.txt
+/GestureAuthoringTools/txt2json/labanotation2/beat2.json
+/GestureAuthoringTools/txt2json/labanotation2/beat.txt
+/GestureAuthoringTools/txt2json/labanotation2/beat.json
+/GestureAuthoringTools/txt2json/labanotation2/beat rotate.txt
+/GestureAuthoringTools/txt2json/labanotation2/beat rotate.json
+/GestureAuthoringTools/txt2json/labanotation2/bad.txt
+/GestureAuthoringTools/txt2json/labanotation2/bad.json
+/GestureAuthoringTools/txt2json/labanotation2/away4.txt
+/GestureAuthoringTools/txt2json/labanotation2/away4.json
+/GestureAuthoringTools/txt2json/labanotation2/away2.txt
+/GestureAuthoringTools/txt2json/labanotation2/away2.json
+/GestureAuthoringTools/txt2json/labanotation2/away.txt.bak
+/GestureAuthoringTools/txt2json/labanotation2/away.txt
+/GestureAuthoringTools/txt2json/labanotation2/away.json
+/GestureAuthoringTools/lab2png/.vs/lab2png/v16/.suo
+/GestureAuthoringTools/lab2png/labanotation/test.png
+/GestureAuthoringTools/txt2json/txt2json.sln
+/GestureAuthoringTools/txt2json/txt2json.pyproj
+/GestureAuthoringTools/lab2png/lab2png.sln
+/GestureAuthoringTools/lab2png/lab2png.pyproj
+/GestureAuthoringTools/LabanEditor/vs2019/

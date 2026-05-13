@@ -1,0 +1,8 @@
+*.bin
+*.npy
+*.pt
+*.mp4
+*.wav
+__pycache__/
+.tmp/
+output/

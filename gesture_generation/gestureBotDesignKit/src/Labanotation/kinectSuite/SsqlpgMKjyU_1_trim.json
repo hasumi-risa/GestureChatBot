@@ -1,0 +1,516 @@
+{
+  "SsqlpgMKjyU_1_trim": {
+    "Position0": {
+      "start time": [
+        "240"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position1": {
+      "start time": [
+        "720"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left Backward", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position2": {
+      "start time": [
+        "1200"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "High"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "High"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position3": {
+      "start time": [
+        "1600"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position4": {
+      "start time": [
+        "1800"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position5": {
+      "start time": [
+        "2040"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position6": {
+      "start time": [
+        "2200"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position7": {
+      "start time": [
+        "2600"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "High"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position8": {
+      "start time": [
+        "2880"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position9": {
+      "start time": [
+        "3160"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right Forward", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "High"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position10": {
+      "start time": [
+        "3440"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position11": {
+      "start time": [
+        "3680"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "High"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position12": {
+      "start time": [
+        "3920"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position13": {
+      "start time": [
+        "4480"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position14": {
+      "start time": [
+        "5120"
+      ], 
+      "duration": [
+        "1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Place", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }, 
+    "Position137": {
+      "start time": [
+        "5480"
+      ], 
+      "duration": [
+        "-1"
+      ], 
+      "head": [
+        "Forward", 
+        "Normal"
+      ], 
+      "right elbow": [
+        "Right", 
+        "Low"
+      ], 
+      "right wrist": [
+        "Left Forward", 
+        "Normal"
+      ], 
+      "left elbow": [
+        "Left Backward", 
+        "Low"
+      ], 
+      "left wrist": [
+        "Forward", 
+        "Normal"
+      ], 
+      "rotation": [
+        "ToLeft", 
+        "0"
+      ]
+    }
+  }
+}
