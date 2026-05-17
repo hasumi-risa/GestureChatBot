@@ -114,27 +114,58 @@ class application(webSocket.HttpServerWrapper):
     # -----------------------------------------------------------------------------
     #
     def processMsg(self, msg):
-        if (not 'message' in msg):
-            print("processMsg(): 'message' is currently the only supported key.")
-            return
+    if (not 'message' in msg):
+        return
 
-        user_input = msg['message']  # ユーザーの入力
+    user_input = msg['message']
 
-        # ChatGPTに問い合わせて返答を取得
-        client = openai.OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "Reply in 2 short sentences only."},
-                {"role": "user", "content": user_input}
-            ]
-        )
-        message = response.choices[0].message.content  # ChatGPTの返答
-        print("ChatGPT Response: ", message)
+    # ChatGPT
+    client = openai.OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": "Reply in 2 short sentences only."},
+            {"role": "user", "content": user_input}
+        ]
+    )
+    message = response.choices[0].message.content
+    print("ChatGPT Response: ", message)
 
-        self.wordList = self.gestureService.tokenizePhrase(message)
+    # ↓↓↓ この2行を削除（古いw2vベースの処理）↓↓↓
+    # self.wordList = self.gestureService.tokenizePhrase(message)
+    # gestureName, scores, trigger_word_num = self.gestureService.findGesture(self.wordList)
 
-        gestureName, scores, trigger_word_num = self.gestureService.findGesture(self.wordList)
+    # Gesture Generation System（generate_gestureが2文分のCSV/labanを生成）
+    PORT = 50000
+    BUFFER_SIZE = 1024
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect(('127.0.0.1', PORT))
+        s.send(message.encode())
+        self.laban_path = s.recv(BUFFER_SIZE).decode()
+        print("Gesture is generated!", self.laban_path)
+
+    # 音声ファイル
+    filename = re.sub(r'[\\/:*?"<>|]+','', message[:30])
+    local_audio_path = os.path.join(os.path.dirname(__file__), 
+        "../../Libraries/gestureBot/web/audio") + "/{}.wav".format(filename)
+    if not os.path.exists(local_audio_path):
+        t2s.text2speech(message, local_audio_path)
+    self.audio_path = "./audio/{}.wav".format(filename)
+
+    # ↓↓↓ フロントへの通知も簡略化（w2v情報は不要）↓↓↓
+    if (self.fnSendMessage):
+        msg = {
+            'msgType': "w2v",
+            'w2v': {
+                'phrase': message,
+                'wordList': [],        # 空でOK
+                'gestureName': "",     # 空でOK
+                'triggerWordNum': 0,
+                'scores': [],
+                'audio': self.audio_path
+            }
+        }
+        self.fnSendMessage(msg)
 
 
         # ----------------------- Gesture Generation System ---------------------------
