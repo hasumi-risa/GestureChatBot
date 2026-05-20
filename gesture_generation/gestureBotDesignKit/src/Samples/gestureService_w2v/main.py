@@ -154,9 +154,8 @@ class application(webSocket.HttpServerWrapper):
         filename = re.sub(r'[\\/:*?"<>|]+','', message[:30])
         local_audio_path = os.path.join(os.path.dirname(__file__), "../../Libraries/gestureBot/web/audio") +  "/{}.wav".format(filename)
 
-        if not os.path.exists(local_audio_path):
-            print('local audio file is not found ==> creating to ', local_audio_path)
-            t2s.text2speech(message, local_audio_path)
+        print('creating audio file to ', local_audio_path)
+        t2s.text2speech(message, local_audio_path)
 
         self.audio_path = "./audio/{}.wav".format(filename)
 
