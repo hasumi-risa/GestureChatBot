@@ -5,6 +5,7 @@ import subprocess
 import pathlib
 import warnings
 
+import pandas as pd
 import generate_gesture
 from utils.convert_laban import convert_laban_format
 
@@ -16,6 +17,24 @@ PORT = 50000
 BUFFER_SIZE = 1024
 
 warnings.simplefilter('ignore')
+
+
+def split_sentences(text):
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    return [s for s in sentences if s.strip()]
+
+
+def concat_csvs(csv_paths, output_path):
+    dfs = []
+    time_offset = 0
+    for path in csv_paths:
+        df = pd.read_csv(path, header=None)
+        df[0] = (df[0] + time_offset).astype(int)
+        frame_interval = int(df[0].iloc[1] - df[0].iloc[0]) if len(df) > 1 else 17
+        time_offset = int(df[0].iloc[-1]) + frame_interval
+        dfs.append(df)
+    pd.concat(dfs, ignore_index=True).to_csv(output_path, header=False, index=False)
+
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(('127.0.0.1', PORT))
@@ -32,12 +51,21 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print("Input Text: ", input_text)
                 filename = re.sub(r'[\\/:*?"<>|]+','',input_text[:30])
 
-                # Gesture Generation
-                generate_gesture.generateGesture(
-                    input_text=input_text, 
-                    save_csv_path=csv_path.format(filename)
-                    # save_mp4_path=mp4_path.format(filename)
+                # Gesture Generation (per sentence)
+                sentences = split_sentences(input_text)
+                print(f"Split into {len(sentences)} sentence(s): {sentences}")
+                tmp_csv_paths = []
+                for i, sentence in enumerate(sentences):
+                    tmp_csv = "./output/csv/tmp_{}_{}.csv".format(filename, i)
+                    generate_gesture.generateGesture(
+                        input_text=sentence,
+                        save_csv_path=tmp_csv
                     )
+                    tmp_csv_paths.append(tmp_csv)
+
+                concat_csvs(tmp_csv_paths, csv_path.format(filename))
+                for p in tmp_csv_paths:
+                    os.remove(p)
                 
                 # Convert to labanotation
                 cmd = ["python", "./LabanSuiteBeta/GestureAuthoringTools/LabanEditor/src/main.py", "--alg", "parallel", 
