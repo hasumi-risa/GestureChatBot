@@ -66,6 +66,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 concat_csvs(tmp_csv_paths, csv_path.format(filename))
                 for p in tmp_csv_paths:
                     os.remove(p)
+
+                # Overwrite with full-text audio (sentence-1 audio was created during generation)
+                full_audio_path = "./gestureBotDesignKit/src/Libraries/gestureBot/web/audio/{}.wav".format(filename)
+                generate_gesture.text2speech(input_text, full_audio_path)
                 
                 # Convert to labanotation
                 cmd = ["python", "./LabanSuiteBeta/GestureAuthoringTools/LabanEditor/src/main.py", "--alg", "parallel", 
