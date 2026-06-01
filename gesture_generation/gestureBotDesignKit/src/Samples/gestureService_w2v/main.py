@@ -125,7 +125,7 @@ class application(webSocket.HttpServerWrapper):
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "Reply in 2 short sentences only."},
+                {"role": "system", "content": "Reply naturally in English."},
                 {"role": "user", "content": user_input}
             ]
         )
@@ -144,7 +144,8 @@ class application(webSocket.HttpServerWrapper):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect(('127.0.0.1', PORT))
             s.send(message.encode())
-            
+            s.shutdown(socket.SHUT_WR)  # signal end of message so server can loop-recv
+
             self.laban_path = s.recv(BUFFER_SIZE).decode()
             print("Gesture is generated!", self.laban_path)
 

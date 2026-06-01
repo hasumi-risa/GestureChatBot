@@ -165,7 +165,7 @@ def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_p
 
         # Beat Generation
         if type_order[i] == 1:
-            print("Beat: {}".format(" ".join([w[0] for w in each_word_time[i]])))
+            print("Beat: {}".format(" ".join(each_word_time[i])))
             a = audio_wave[start_frame:end_frame]
             gesture, laban = bg.generate(a)
             kf = list(laban.keys())
@@ -174,20 +174,25 @@ def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_p
 
         # Imagistic Generation
         elif type_order[i] == 2:
-            print("Imagistic: {}".format(" ".join([w[0] for w in each_word_time[i]])))
-            text = " ".join([w[0] for w in each_word_time[i]])
+            text = " ".join(each_word_time[i])  # full BERT tokens, not first chars
+            print("Imagistic: {}".format(text))
             if i == 0:
                 a = audio_wave[:end_frame-INTERPOLATE_FRAME]
             elif i == len(type_order) - 1:
                 a = audio_wave[start_frame+INTERPOLATE_FRAME:end_frame]
             else:
                 a = audio_wave[start_frame+INTERPOLATE_FRAME:end_frame-INTERPOLATE_FRAME]
-                
-            gesture, sl, el = generate_imagistic_gesture(text, a, imglib, gwp, MODE, 
+
+            gesture, sl, el = generate_imagistic_gesture(text, a, imglib, gwp, MODE,
                 ORIGINAL_FPS, sentence_segment=SENTENCE_SEGMENT_NUM, interpolate_frame=INTERPOLATE_FRAME)
             if len(gesture) != 0:
                 gesture_seq.append(gesture)
                 laban_seq.append([sl, el])
+            else:
+                # Fall back to No-Gesture to keep gesture_seq in sync with type_order
+                durations.append([start_frame, end_frame])
+                gesture_seq.append([])
+                laban_seq.append([])
 
         # No-Gesture
         else:

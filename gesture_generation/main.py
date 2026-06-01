@@ -46,7 +46,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         (connection, client) = s.accept()
         try:
                 print('Client connected', client)
-                data = connection.recv(BUFFER_SIZE)
+                chunks = []
+                while True:
+                    chunk = connection.recv(BUFFER_SIZE)
+                    if not chunk:
+                        break
+                    chunks.append(chunk)
+                data = b"".join(chunks)
                 input_text = data.decode()
                 print("Input Text: ", input_text)
                 filename = re.sub(r'[\\/:*?"<>|]+','',input_text[:30])

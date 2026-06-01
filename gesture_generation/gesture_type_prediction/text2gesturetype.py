@@ -65,25 +65,79 @@ def makeContinuous(gesture_types, window_size=5):
     return new_gesture_types
 
     
+def _split_into_chunks(text, tokenizer, max_len):
+    """Split text into sentence-boundary chunks that each fit within max_len tokens."""
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    sentences = [s for s in sentences if s]
+
+    chunks = []
+    current_sentences = []
+    current_len = 2  # [CLS] + [SEP]
+
+    for sent in sentences:
+        sent_token_len = len(tokenizer.encode(sent, add_special_tokens=False))
+        if current_len + sent_token_len > max_len and current_sentences:
+            chunks.append(' '.join(current_sentences))
+            current_sentences = [sent]
+            current_len = 2 + sent_token_len
+        else:
+            current_sentences.append(sent)
+            current_len += sent_token_len
+
+    if current_sentences:
+        chunks.append(' '.join(current_sentences))
+
+    return chunks
+
+
+def _predict_chunk(chunk, model, tokenizer, device, PAD_INDEX):
+    """Run gesture type prediction on a single chunk (must fit within MAX_SEQ_LEN)."""
+    chunk_id = tokenizer.encode(chunk, add_special_tokens=True)
+    chunk_id = [int(t) for t in chunk_id]
+    # Truncate if a single sentence is pathologically long
+    if len(chunk_id) > MAX_SEQ_LEN:
+        chunk_id = chunk_id[:MAX_SEQ_LEN - 1] + [tokenizer.sep_token_id]
+    chunk_tokens = tokenizer.convert_ids_to_tokens(chunk_id)
+    padded = chunk_id + [PAD_INDEX] * (MAX_SEQ_LEN - len(chunk_id))
+    chunk_tensor = torch.tensor([padded]).to(device)
+    with torch.no_grad():
+        output = model(chunk_tensor)
+        _, predicted = torch.max(output, 2)
+    chunk_types = list(predicted[0][:len(chunk_tokens)].cpu().numpy())
+    return chunk_tokens, chunk_types
+
+
 def text2gesturetype(text, model, tokenizer, device):
     PAD_INDEX = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
     model.eval()
-    text_id = tokenizer.encode(text, add_special_tokens=True)
-    text_id = [int(t) for t in text_id]
-    text_tokens = tokenizer.convert_ids_to_tokens(text_id)
-    for i in range(len(text_id), MAX_SEQ_LEN):
-        text_id.append(PAD_INDEX)
-    text_id = torch.tensor([text_id]).to(device)
-    with torch.no_grad():
-        output = model(text_id)
-        _, predicted = torch.max(output, 2)
-    gesture_types = predicted[0][:len(text_tokens)]
 
-    # ?は強制的にImagisticに
+    raw_ids = tokenizer.encode(text, add_special_tokens=False)
+    if len(raw_ids) + 2 <= MAX_SEQ_LEN:
+        chunks = [text]
+    else:
+        chunks = _split_into_chunks(text, tokenizer, MAX_SEQ_LEN)
+
+    # Accumulate tokens and types across all chunks, keeping one [CLS]/[SEP] pair
+    all_tokens = ['[CLS]']
+    all_types = [0]
+
+    for chunk in chunks:
+        chunk_tokens, chunk_types = _predict_chunk(chunk, model, tokenizer, device, PAD_INDEX)
+        # Strip [CLS] and [SEP] from each chunk before merging
+        all_tokens.extend(chunk_tokens[1:-1])
+        all_types.extend(chunk_types[1:-1])
+
+    all_tokens.append('[SEP]')
+    all_types.append(0)
+
+    text_tokens = all_tokens
+    gesture_types = all_types
+
     for i in range(len(text_tokens)):
         if text_tokens[i] == '?':
             gesture_types[i] = 2
-            gesture_types[i-1] = 2
+            if i > 0:
+                gesture_types[i - 1] = 2
 
     new_gesture_types = makeContinuous(gesture_types)
     filename = re.sub(r'[\\/:*?"<>|]+','', text[:30])
