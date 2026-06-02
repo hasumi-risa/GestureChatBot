@@ -126,7 +126,7 @@ class application(webSocket.HttpServerWrapper):
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": f"Reply in {random.randint(1, 4)} sentence(s) only."},
+                {"role": "system", "content": f"Reply in {random.randint(3, 4)} sentence(s) only."},
                 {"role": "user", "content": user_input}
             ]
         )
