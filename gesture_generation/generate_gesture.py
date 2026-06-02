@@ -93,7 +93,7 @@ ngg = NoGestureGenerator(noges_library_path)
 
 gwp = GestureWordPrediction(gwp_model_path)
 
-def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_path=None):
+def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_path=None, start_laban=None):
 
     # Convert text to speech audio
     print('Converting the text to speech audio...')
@@ -208,13 +208,15 @@ def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_p
             end_frame = durations[cnt][1]
             duration = end_frame - start_frame
             if i == 0:
-                if len(laban_seq) <= 1:
-                    gesture, laban = ngg.generate(duration)
+                next_start = laban_seq[i+1][0] if len(laban_seq) > 1 and len(laban_seq[i+1]) > 0 else None
+                if start_laban is not None and next_start is not None:
+                    gesture, laban = ngg.generate(duration, start_laban=start_laban, end_laban=next_start)
+                elif start_laban is not None:
+                    gesture, laban = ngg.generate(duration, start_laban=start_laban)
+                elif next_start is not None:
+                    gesture, laban = ngg.generate(duration, end_laban=next_start)
                 else:
-                    if len(laban_seq[i+1]) == 0:
-                        gesture, laban = ngg.generate(duration)
-                    else:
-                        gesture, laban = ngg.generate(duration, end_laban=laban_seq[i+1][0])
+                    gesture, laban = ngg.generate(duration)
             elif i == len(gesture_seq) - 1:
                 prev_end = laban_seq[i-1][1] if len(laban_seq[i-1]) > 1 else None
                 gesture, laban = ngg.generate(duration, start_laban=prev_end) if prev_end is not None else ngg.generate(duration)
@@ -253,6 +255,9 @@ def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_p
         print("Saving csv... ")
         CMUPose2KinectData(gesture, save_csv=save_csv_path, fps=FPS, isConvert=False)
         print('Saved csv file to {}'.format(save_csv_path))
+
+    end_laban = laban_seq[-1][1] if laban_seq and len(laban_seq[-1]) > 1 else None
+    return end_laban
 
     if save_mp4_path:
         print("Saving video...")

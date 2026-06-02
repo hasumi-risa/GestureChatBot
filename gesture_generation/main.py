@@ -61,11 +61,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 sentences = split_sentences(input_text)
                 print(f"Split into {len(sentences)} sentence(s): {sentences}")
                 tmp_csv_paths = []
+                prev_end_laban = None
                 for i, sentence in enumerate(sentences):
                     tmp_csv = "./output/csv/tmp_{}_{}.csv".format(filename, i)
-                    generate_gesture.generateGesture(
+                    prev_end_laban = generate_gesture.generateGesture(
                         input_text=sentence,
-                        save_csv_path=tmp_csv
+                        save_csv_path=tmp_csv,
+                        start_laban=prev_end_laban
                     )
                     tmp_csv_paths.append(tmp_csv)
 
