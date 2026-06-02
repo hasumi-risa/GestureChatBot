@@ -216,9 +216,19 @@ def generateGesture(input_text, input_audio=None, save_csv_path=None, save_mp4_p
                     else:
                         gesture, laban = ngg.generate(duration, end_laban=laban_seq[i+1][0])
             elif i == len(gesture_seq) - 1:
-                gesture, laban = ngg.generate(duration, start_laban=laban_seq[i-1][1])
+                prev_end = laban_seq[i-1][1] if len(laban_seq[i-1]) > 1 else None
+                gesture, laban = ngg.generate(duration, start_laban=prev_end) if prev_end is not None else ngg.generate(duration)
             else:
-                gesture, laban = ngg.generate(duration, start_laban=laban_seq[i-1][1], end_laban=laban_seq[i+1][0])
+                prev_end = laban_seq[i-1][1] if len(laban_seq[i-1]) > 1 else None
+                next_start = laban_seq[i+1][0] if len(laban_seq[i+1]) > 0 else None
+                if prev_end is not None and next_start is not None:
+                    gesture, laban = ngg.generate(duration, start_laban=prev_end, end_laban=next_start)
+                elif prev_end is not None:
+                    gesture, laban = ngg.generate(duration, start_laban=prev_end)
+                elif next_start is not None:
+                    gesture, laban = ngg.generate(duration, end_laban=next_start)
+                else:
+                    gesture, laban = ngg.generate(duration)
             gesture_seq[i] = gesture
             laban_seq[i] = [[], laban[list(laban.keys())[-1]]]
             cnt += 1
