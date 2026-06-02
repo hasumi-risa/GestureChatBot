@@ -9,6 +9,7 @@ import re
 import threading
 import time
 import socket
+import random
 import openai
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'Libraries'))
@@ -125,7 +126,7 @@ class application(webSocket.HttpServerWrapper):
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "Reply naturally in English."},
+                {"role": "system", "content": f"Reply in {random.randint(1, 4)} sentence(s) only."},
                 {"role": "user", "content": user_input}
             ]
         )
