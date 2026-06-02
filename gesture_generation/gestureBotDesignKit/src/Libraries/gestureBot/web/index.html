@@ -81,6 +81,14 @@
                                     <canvas id="canvasFrameTimes" width="360px" height="12px"></canvas>
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="padding-top: 4px;">
+                                    <label for="sliderVolume" style="color: #a0a0a0">Volume&nbsp;</label>
+                                    <input name="sliderVolume" id="sliderVolume" type="range" min="0" max="100" step="1" value="30" style="width: 200px;"
+                                        oninput="document.getElementById('lblVolumeValue').textContent = this.value + '%'">
+                                    <span id="lblVolumeValue" style="color: #a0a0a0">30%</span>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                     <div id="lblTime" style="float: right; border: 0px solid #a0a0a0; padding: 4px;">0%</div>

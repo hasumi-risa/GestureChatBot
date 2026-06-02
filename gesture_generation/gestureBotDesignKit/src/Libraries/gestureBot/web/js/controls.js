@@ -1308,7 +1308,10 @@ UIControls.prototype.allReady = function ()
 }
 function sayThis(audio_path)
 {
+    var slider = document.getElementById('sliderVolume');
+    var volume = slider ? slider.value / 100 : 0.3;
     var voice = new Audio(audio_path);
+    voice.volume = volume;
     voice.play();
 }
 //--------------------------------------------------------------------------------------------
